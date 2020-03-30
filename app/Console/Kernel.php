@@ -4,7 +4,6 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Post;
 
 class Kernel extends ConsoleKernel
 {
@@ -25,16 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // Имитируем рандомное приращение просмотров каждые 5 минут
-        $schedule->call(function (){
-            Post::get('id')->each(function($item, $key){
-                Post::addViewCounts($item->id, random_int(0, 5));
-            });
-        })->everyFiveMinutes();
-
-        // Отправляем в VK сообщения каждый день с 16 до 19
-
-
+        // $schedule->command('inspire')->hourly();
     }
 
     /**
