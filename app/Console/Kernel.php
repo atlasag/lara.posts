@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
                 Post::addViewCounts($item->id, random_int(0, 5));
             });
         })->everyFiveMinutes();
-        
+
     }
 
     /**
