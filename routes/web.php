@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Создаем набор CRUD-роутов для работы с постами
+Route::resource('posts', 'PostsController');
